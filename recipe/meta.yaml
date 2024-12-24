@@ -21,11 +21,7 @@ requirements:
     - cmake
   host:
     - clhpp
-    - ocl-icd  # [linux]
-    - khronos-opencl-icd-loader  # [osx or win]
-  run:
-    - {{ pin_compatible("ocl-icd") }}  # [linux]
-    - {{ pin_compatible("khronos-opencl-icd-loader", max_pin=None) }}  # [osx or win]
+    - libopencl-devel
 test:
   commands:
     - clpeak -h
