@@ -1,5 +1,5 @@
 {% set name = "clpeak" %}
-{% set version = "1.1.2" %}
+{% set version = "1.1.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,15 +7,16 @@ package:
 
 source:
   url: https://github.com/krrishnarraj/clpeak/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 7bc7beba6b3307290650abc4f13fe9389b271c1a64601fa333461516950d745b
+  sha256: c9ba6d46d17e94fe8074821047a6d59b011e600293ec27b8c52dd04370fcff5d
 
 build:
   number: 0
-  skip: True  # [win]
+  skip: true  # [win]
 
 requirements:
   build:
     - {{ compiler('cxx') }}
+    - {{ stdlib("c") }}
     - ninja
     - cmake
   host:
